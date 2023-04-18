@@ -45,7 +45,7 @@ class TicTacToe {
 		element.querySelector(".xo").textContent = this.currentPlayer;
 
 		// Check for win or draw
-		if (this.checkWin()) {
+		if (this.checkWin() | this.checkDraw()) {
 			this.endGame();
 			return;
 		}
@@ -78,5 +78,21 @@ class TicTacToe {
 				this.gameBoard[b] === this.gameBoard[c]
 			);
 		});
+	}
+
+	checkDraw() {
+		// Check if all spaces are filled
+		return Object.values(this.gameBoard).every((value) => value !== "");
+	}
+
+	updateDisplay() {
+		// Update display to show current player
+		const displayPlayer = document.querySelector(".display_player");
+		displayPlayer.textContent = this.currentPlayer;
+
+		// Update class to indicate whose turn it is
+		const gameBoard = document.querySelector(".game_board");
+		gameBoard.classList.remove("x_turn", "o_turn");
+		gameBoard.classList.add(`${this.currentPlayer.toLowerCase()}_turn`);
 	}
 }
