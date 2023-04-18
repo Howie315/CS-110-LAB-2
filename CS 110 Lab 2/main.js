@@ -96,3 +96,9 @@ class TicTacToe {
 		gameBoard.classList.add(`${this.currentPlayer.toLowerCase()}_turn`);
 	}
 }
+
+const newGameButton = document.querySelector(".new_game");
+newGameButton.addEventListener("click", () => location.reload());
+
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", () => game.reset());
