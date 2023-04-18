@@ -57,35 +57,6 @@ class TicTacToe {
 		this.updateDisplay();
 	}
 
-	// this code block booty cheeks
-	// checkWin() {
-	// 	const winningCombos = [
-	// 		["one", "two", "three"],
-	// 		["four", "five", "six"],
-	// 		["seven", "eight", "nine"],
-	// 		["one", "four", "seven"],
-	// 		["two", "five", "eight"],
-	// 		["three", "six", "nine"],
-	// 		["one", "five", "nine"],
-	// 		["three", "five", "seven"],
-	// 	];
-
-	// 	// Check if any winning combo has been achieved
-	// 	return winningCombos.some((combo) => {
-	// 		const [a, b, c] = combo;
-	// 		return (
-	// 			this.gameBoard[a] !== "" &&
-	// 			this.gameBoard[a] === this.gameBoard[b] &&
-	// 			this.gameBoard[b] === this.gameBoard[c]
-	// 		);
-	// 	});
-	// }
-
-	// checkDraw() {
-	// 	// Check if all spaces are filled
-	// 	return Object.values(this.gameBoard).every((value) => value !== "");
-	// }
-
 	updateDisplay() {
 		// Update display to show current player
 		const displayPlayer = document.querySelector(".display_player");
@@ -95,6 +66,8 @@ class TicTacToe {
 		const gameBoard = document.querySelector(".game_board");
 		gameBoard.classList.remove("x_turn", "o_turn");
 		gameBoard.classList.add(`${this.currentPlayer.toLowerCase()}_turn`);
+		// Call handleMove() to switch to next player's turn
+		this.handleMove(null);
 	}
 }
 
