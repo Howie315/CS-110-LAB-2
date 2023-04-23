@@ -9,28 +9,45 @@
 	</head>
 	<body>
 		<h1>Tic Tac Toe</h1>
-		<h2>Its your turn, <span class="display_player"></span>.</h2>
+		<div class="scores">
+			<h2 class="Xscores">X:</h2>
+			<h2 class="Oscores">O:</h2>
+		</div>
+		<h2>Round:  <span class="round"></span></h2>
+		<h2 class="display_player">Its your turn, X</h2>
 
 		<div class="game_board">
 			<div class="row">
 				<div class="one"><span class="xo"></span></div>
-				<div class="two"><span class="xo"></span></div>
-				<div class="three"><span class="xo"></span></div>
-			</div>
-			<div class="row">
 				<div class="four"><span class="xo"></span></div>
-				<div class="five"><span class="xo"></span></div>
-				<div class="six"><span class="xo"></span></div>
+				<div class="seven"><span class="xo"></span></div>
 			</div>
 			<div class="row">
-				<div class="seven"><span class="xo"></span></div>
+				<div class="two"><span class="xo"></span></div>
+				<div class="five"><span class="xo"></span></div>
 				<div class="eight"><span class="xo"></span></div>
+			</div>
+			<div class="row">
+				<div class="three"><span class="xo"></span></div>
+				<div class="six"><span class="xo"></span></div>
 				<div class="nine"><span class="xo"></span></div>
 			</div>
 		</div>
-
+		
+		<div class="gameModes"> 
+			<div class="gameMode">
+				<input type="checkbox" id="twoPlayers" name="twoPs">
+				<label for="twoPs"> 2 Players</label>
+			</div>
+			<div class="gameMode">
+				<input type="checkbox" id="ai" name="againstAI">
+				<label for="againstAI"> Play Against AI</label>
+			</div>
+			
+		</div>
 		<button class="new_game">New Game</button>
 		<button class="reset">Reset</button>
+		
 		<script>
 			const ticTacToe = new TicTacToe();
 		</script>
